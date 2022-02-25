@@ -1,36 +1,59 @@
 import processing.core.PApplet;
 
 public class Sketch extends PApplet {
-	
-	
-  /**
-   * Called once at the beginning of execution, put your size all in this method
-   */
+
+  //Width and Height
+  float width = 800;
+  float Height = 800;
+
+  // Scale Factor
+  float wScaleF = width / 400;
+  float hScaleF = Height / 400;
+
   public void settings() {
 	// put your size call here
-    size(400, 400);
+    size((int)width, (int)Height);
   }
 
-  /** 
-   * Called once at the beginning of execution.  Add initial set up
-   * values here i.e background, stroke, fill etc.
-   */
+ 
   public void setup() {
-    background(210, 255, 173);
+    //grass
+    background(71, 219, 66);
   }
 
-  /**
-   * Called repeatedly, anything drawn to the screen goes here
-   */
   public void draw() {
 	  
-	// sample code, delete this stuff
-    stroke(128);
-    line(150, 25, 270, 350);  
+	// sky
+  fill (135, 206, 235);
+  rect(0, 0, width, 230 * hScaleF);
 
-    stroke(255);
-    line(50, 125, 70, 50);  
+  // house
+  fill(245, 66, 66);
+  rect(170 * wScaleF, 220 * hScaleF, 70 * wScaleF, 45 * hScaleF);
+  
+  // roof
+  fill(245, 66, 66);
+  triangle(170 * wScaleF, 220 * hScaleF, 205 * wScaleF, 195 * hScaleF, 240 * wScaleF, 220 * hScaleF);
+  
+  // Windows
+  fill(255,255,255);
+  rect(180 * wScaleF, 230 * hScaleF, 10 * wScaleF, 12 * hScaleF);
+  rect(220 * wScaleF, 230 * hScaleF, 10 * wScaleF, 12 * hScaleF);
+
+  // Door
+  fill(0);
+  rect(200 * wScaleF, 245 * hScaleF, 10 * wScaleF, 18 * hScaleF);
+
+  // Sun
+  fill(250, 255, 0);
+  ellipse(0, 0, 150 * wScaleF, 150 * hScaleF);
+
+
+
+
+  }
+
+
   }
   
   // define other methods down here.
-}
